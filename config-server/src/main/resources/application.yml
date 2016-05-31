@@ -1,0 +1,25 @@
+server:
+  port: 8888
+
+info:
+  description: Spring Cloud Config Server
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+         uri: https://github.com/codependent/storyteller-microservices-config.git
+
+logging:
+  level:
+    org.springframework.web: 'DEBUG'
